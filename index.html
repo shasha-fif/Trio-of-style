@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trio of Style - Dress Up Game</title>
+    <style>
+        body {
+            background-color: #ffeaff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #ff66c4;
+        }
+        #game-area {
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            background-color: white;
+            border: 2px solid #ff66c4;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+        }
+        .btn {
+            background-color: #ff66c4;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trio of Style 🦄</h1>
 
+    <div id="game-area"></div>
+
+    <button class="btn" onclick="changePony()">Change Pony</button>
+    <button class="btn" onclick="changeOutfit()">Change Outfit</button>
+
+    <script>
+        let ponyImages = [
+            "https://via.placeholder.com/300x300?text=Pony+1",
+            "https://via.placeholder.com/300x300?text=Pony+2",
+            "https://via.placeholder.com/300x300?text=Pony+3"
+        ];
+        let outfitImages = [
+            "https://via.placeholder.com/300x300?text=Outfit+1",
+            "https://via.placeholder.com/300x300?text=Outfit+2",
+            "https://via.placeholder.com/300x300?text=Outfit+3"
+        ];
+
+        let ponyIndex = 0;
+        let outfitIndex = 0;
+
+        function updateGame() {
+            document.getElementById("game-area").style.backgroundImage =
+                `url(${ponyImages[ponyIndex]})`;
+        }
+
+        function changePony() {
+            ponyIndex = (ponyIndex + 1) % ponyImages.length;
+            updateGame();
+        }
+
+        function changeOutfit() {
+            outfitIndex = (outfitIndex + 1) % outfitImages.length;
+            alert("Outfit change coming soon! 💖");
+        }
+
+        updateGame();
+    </script>
+</body>
+</html>
